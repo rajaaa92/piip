@@ -1,0 +1,18 @@
+# login to facebook using this creditials:
+# login: asdasdfghfgh@maildrop.cc
+# password: qweqwertyrty
+
+# go to the followin link and get your token (include status reading and status update):
+# https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname&version=
+# copy-paste it under under oauth_access_token
+
+# see results on the account you logged in:
+# https://www.facebook.com/testowe.konto.908
+
+oauth_access_token: token_here
+
+
+statuses_to_read_numer: 5
+reading_enabled: true
+writing_enabled: true
+text_to_write: "Siemanko"
