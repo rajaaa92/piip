@@ -11,7 +11,9 @@
 
 oauth_access_token: token_here
 
-sleep_time: 61 #seconds
+sleep_time: 5 #seconds
+max_iterations: 10
+max_time: 20 #seconds
 statuses_to_read_numer: 5
 reading_enabled: true
 writing_enabled: true
