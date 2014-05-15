@@ -14,22 +14,26 @@ class FacebookApi
     return resp["id"]
   end
 
-  def echo
-    puts "echo"
-  end
-
   def read(posts_number = nil, log = true)
     posts_number ||= AppConfig.statuses_to_read_numer
+    ids_to_str = AppConfig.ids_to_read rescue AppConfig.my_id
+    ids = ids_to_str.split(',')
     put_log("Reading started") if log
-    statuses = @api.get_object("/me/statuses", "fields"=>"message", "limit" => posts_number) rescue []
-    put_log("Reading finished", "Read statuses: #{statuses.count}") if log
-    return statuses.count
+    resp = @api.get_object("/statuses?ids=#{ids_to_str}", "fields"=>"message", "limit" => posts_number) rescue []
+    statuses_count = 0
+    ids.each { |id| statuses_count += resp[id]["statuses"]["data"].count rescue 0 }
+    put_log("Reading finished", "Read statuses: #{statuses_count}") if log
+    return statuses_count
   end
 
   def put_log(label, body = nil)
     time = Time.now
     body = "<#{body}>" if body
     puts "#{label}: #{time.strftime('%H:%M:%S.%3N')} #{body}"
+  end
+
+  def echo
+    puts "echo"
   end
 
 end

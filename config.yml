@@ -10,11 +10,13 @@
 # https://www.facebook.com/testowe.konto.908
 
 oauth_access_token: token_here
+my_id: testowe.konto.908
+ids_to_read: "rajaaa92,testowe.konto.908"
 
-sleep_time: 5 #seconds
+sleep_time: 10 #seconds
 max_iterations: 10
-max_time: 20 #seconds
+max_time: 100 #seconds
 statuses_to_read_numer: 5
 reading_enabled: true
-writing_enabled: true
+writing_enabled: false
 text_to_write: "Siemanko"
