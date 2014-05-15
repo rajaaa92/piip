@@ -8,8 +8,9 @@ class FacebookApi
 
   def post(text = nil, log = true)
     text ||= AppConfig.text_to_write + " #{Time.now}"
+    id = AppConfig.id_to_post || "me"
     put_log("Posting started") if log
-    resp = @api.put_wall_post(text) rescue {id: nil}
+    resp = @api.put_wall_post(text, {}, id) rescue {id: "error"}
     put_log("Posting finished", "Post id: #{resp["id"]}") if log
     return resp["id"]
   end

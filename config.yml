@@ -12,11 +12,12 @@
 oauth_access_token: token_here
 my_id: testowe.konto.908
 ids_to_read: "rajaaa92,testowe.konto.908"
+id_to_post: 716640265072489
 
 sleep_time: 10 #seconds
 max_iterations: 10
 max_time: 100 #seconds
 statuses_to_read_numer: 5
 reading_enabled: true
-writing_enabled: false
+writing_enabled: true
 text_to_write: "Siemanko"
